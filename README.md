@@ -54,6 +54,38 @@ Bitlinks is a modern, fast, and secure URL shortener built with the Next.js App 
    ```
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## 🌍 Deployment & Hosting Guide
+
+Follow these steps to take your project live using **Vercel** and **MongoDB Atlas**, along with adding your own custom domain.
+
+### 1. Database Setup (MongoDB Atlas)
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a free account.
+2. Build a new free cluster.
+3. Go to **Database Access** and create a new database user with a secure password.
+4. Go to **Network Access** and click "Add IP Address", then choose "Allow Access From Anywhere" (`0.0.0.0/0`).
+5. Go back to **Database**, click "Connect", choose "Connect your application", and copy the connection string.
+6. Replace `<password>` with the user password you created. This is your `MONGODB_URI`.
+
+### 2. Hosting on Vercel
+Vercel is the best platform to host Next.js apps.
+1. Create a free account on [Vercel](https://vercel.com).
+2. Connect your GitHub account and click **"Add New..." > "Project"**.
+3. Import your `bitlinks` repository.
+4. In the **Environment Variables** section during setup, add the following keys:
+   - `MONGODB_URI`: (Your Atlas connection string)
+   - `NEXT_PUBLIC_HOST`: (Your production domain, e.g., `https://bitlinks.yourdomain.com`)
+   - `RESEND_API_KEY`: (Your Resend API key)
+5. Click **Deploy**. Within a minute, your app will be live!
+
+### 3. Adding a Custom Domain
+Once your app is deployed on Vercel:
+1. Go to your project dashboard on Vercel and click **Settings**.
+2. Navigate to the **Domains** tab.
+3. Enter the custom domain you purchased (from GoDaddy, Namecheap, Hostinger, etc.) and click **Add**.
+4. Vercel will provide you with DNS records (usually an `A` record or a `CNAME`).
+5. Go to your domain registrar's DNS settings and add the records provided by Vercel.
+6. Wait for the DNS to propagate (can take a few minutes), and your custom domain will be active with an automatic SSL certificate!
+
 ## 📂 Project Structure
 
 - `/app`: Next.js App Router pages (Home, About, Contact, Shorten).
