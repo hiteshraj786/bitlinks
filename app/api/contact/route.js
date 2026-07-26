@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+export const dynamic = 'force-dynamic'
 import clientPromise from '@/lib/mongodb'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
