@@ -1,5 +1,7 @@
 # Bitlinks 🔗
 
+**🔴 Live Demo:** [https://bitlinks-jvi5.onrender.com](https://bitlinks-jvi5.onrender.com)
+
 Bitlinks is a modern, fast, and secure URL shortener built with the Next.js App Router and MongoDB. Say goodbye to long, unwieldy links and create clean, memorable URLs instantly.
 
 ## ✨ Features
